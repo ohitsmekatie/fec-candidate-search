@@ -1,0 +1,54 @@
+{"level":"info","message":"Tool call received: getSwaggerDefinition","service":"swagger-mcp","timestamp":"2025-07-25 06:14:22"}
+{"level":"info","message":"Tool arguments: {\"url\":\"https://api.open.fec.gov/swagger/\",\"saveLocation\":\"/Users/mapache/code/fec-candidate-search\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:14:22"}
+{"level":"info","message":"Calling swaggerService.getSwaggerDefinition()","service":"swagger-mcp","timestamp":"2025-07-25 06:14:22"}
+{"level":"info","message":"Query parameters: {\"url\":\"https://api.open.fec.gov/swagger/\",\"saveLocation\":\"/Users/mapache/code/fec-candidate-search\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:14:22"}
+{"level":"info","message":"Fetching Swagger definition from https://api.open.fec.gov/swagger/","service":"swagger-mcp","timestamp":"2025-07-25 06:14:22"}
+{"level":"info","message":"Swagger definition response type: object","service":"swagger-mcp","timestamp":"2025-07-25 06:14:23"}
+{"level":"info","message":"Swagger definition response is not an array: {\"filePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\",\"url\":\"https://api.open.fec.gov/swagger/\",\"type\":\"swagger\"}...","service":"swagger-mcp","timestamp":"2025-07-25 06:14:23"}
+{"level":"info","message":"Successfully stringified swagger definition response","service":"swagger-mcp","timestamp":"2025-07-25 06:14:23"}
+{"level":"info","message":"Tool call received: listEndpoints","service":"swagger-mcp","timestamp":"2025-07-25 06:16:32"}
+{"level":"info","message":"Tool arguments: {\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:16:32"}
+{"level":"info","message":"Calling swaggerService.listEndpoints()","service":"swagger-mcp","timestamp":"2025-07-25 06:16:32"}
+{"level":"info","message":"Input parameters: {\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:16:32"}
+{"level":"info","message":"Endpoints response: [{\"path\":\"/v1/audit-case/\",\"method\":\"GET\",\"description\":\"\\nThis endpoint contains Final Audit Reports approved by the Commission since inception.\\nThe search can be based on information about the audi...","service":"swagger-mcp","timestamp":"2025-07-25 06:16:32"}
+{"level":"info","message":"Tool call received: generateEndpointToolCode","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Tool arguments: {\"path\":\"/v1/names/candidates/\",\"method\":\"GET\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Calling swaggerService.generateEndpointToolCode()","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Query parameters: {\"path\":\"/v1/names/candidates/\",\"method\":\"GET\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Reading Swagger definition from /Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Validating generated code against MCP schema","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Validating tool definition against MCP schema...","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Generated code passed MCP schema validation","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Generated TypeScript code for endpoint GET /v1/names/candidates/","service":"swagger-mcp","timestamp":"2025-07-25 06:18:23"}
+{"level":"info","message":"Tool call received: generateEndpointToolCode","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Tool arguments: {\"method\":\"GET\",\"path\":\"/v1/candidates/search/\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Calling swaggerService.generateEndpointToolCode()","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Query parameters: {\"method\":\"GET\",\"path\":\"/v1/candidates/search/\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Reading Swagger definition from /Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Validating generated code against MCP schema","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Validating tool definition against MCP schema...","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Generated code passed MCP schema validation","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Generated TypeScript code for endpoint GET /v1/candidates/search/","service":"swagger-mcp","timestamp":"2025-07-25 06:19:15"}
+{"level":"info","message":"Tool call received: listEndpoints","service":"swagger-mcp","timestamp":"2025-07-25 06:22:56"}
+{"level":"info","message":"Tool arguments: {\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:22:56"}
+{"level":"info","message":"Calling swaggerService.listEndpoints()","service":"swagger-mcp","timestamp":"2025-07-25 06:22:56"}
+{"level":"info","message":"Input parameters: {\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:22:56"}
+{"level":"info","message":"Endpoints response: [{\"path\":\"/v1/audit-case/\",\"method\":\"GET\",\"description\":\"\\nThis endpoint contains Final Audit Reports approved by the Commission since inception.\\nThe search can be based on information about the audi...","service":"swagger-mcp","timestamp":"2025-07-25 06:22:56"}
+{"level":"info","message":"Tool call received: generateEndpointToolCode","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Tool arguments: {\"method\":\"GET\",\"path\":\"/v1/candidates/search/\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Calling swaggerService.generateEndpointToolCode()","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Query parameters: {\"method\":\"GET\",\"path\":\"/v1/candidates/search/\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Reading Swagger definition from /Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Validating generated code against MCP schema","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Validating tool definition against MCP schema...","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Generated code passed MCP schema validation","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Generated TypeScript code for endpoint GET /v1/candidates/search/","service":"swagger-mcp","timestamp":"2025-07-25 06:23:48"}
+{"level":"info","message":"Tool call received: generateEndpointToolCode","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Tool arguments: {\"method\":\"GET\",\"path\":\"/v1/names/candidates/\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Calling swaggerService.generateEndpointToolCode()","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Query parameters: {\"method\":\"GET\",\"path\":\"/v1/names/candidates/\",\"swaggerFilePath\":\"/Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json\"}","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Reading Swagger definition from /Users/mapache/code/fec-candidate-search/03c146b057efb1700b355e1b3f02697c7150162d7e67f66b24c9a7a57d985321.json","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Validating generated code against MCP schema","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Validating tool definition against MCP schema...","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Generated code passed MCP schema validation","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}
+{"level":"info","message":"Generated TypeScript code for endpoint GET /v1/names/candidates/","service":"swagger-mcp","timestamp":"2025-07-25 06:23:54"}

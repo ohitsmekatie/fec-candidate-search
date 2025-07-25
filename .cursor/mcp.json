@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "swagger-mcp": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["~/code/swagger-mcp/build/index.js"]
+    }
+  },
+  "inputs": []
+}
