@@ -5,7 +5,7 @@ import {
   CandidateNameResult,
   CandidateSearchOptions,
   FecApiError,
-} from '../../types/candidate_types.js'
+} from './types/candidate_types.js'
 import { API_PARAMS } from './api_params.js'
 
 export class CandidateSearchService {
