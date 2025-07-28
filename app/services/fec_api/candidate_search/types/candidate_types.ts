@@ -1,14 +1,3 @@
-// Basic types for FEC candidate search responses
-export interface FecApiResponse<T> {
-  pagination: {
-    count: number
-    page: number
-    pages: number
-    per_page: number
-  } | null
-  results: T[]
-}
-
 export interface CandidateSearchResult {
   candidate_id: string
   name: string
@@ -56,15 +45,4 @@ export interface CandidateSearchOptions {
   page?: number
   per_page?: number
   sort?: string
-}
-
-export class FecApiError extends Error {
-  constructor(
-    message: string,
-    public statusCode: number,
-    public apiMessage?: string
-  ) {
-    super(message)
-    this.name = 'FecApiError'
-  }
 }

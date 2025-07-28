@@ -1,13 +1,12 @@
 import env from '#start/env'
-import {
-  CandidateSearchResult,
-  CandidateNameResult,
-  CandidateSearchOptions,
-} from './types/candidate_types.js'
-import { API_PARAMS } from './api_params.js'
 import { FecApiResponse, FecApiError } from '#services/fec_api/shared/types'
+import {
+  CommitteeDetail,
+  CandidateCommitteesOptions,
+} from '#services/fec_api/candidate_committees/types/committee_types'
+import { CandidateCommitteeParams } from '#services/fec_api/candidate_committees/api_params'
 
-export class CandidateSearchService {
+export class CandidateCommitteesService {
   private baseUrl: string
   private apiKey: string
   private requestTimeout: number
@@ -19,42 +18,14 @@ export class CandidateSearchService {
   }
 
   /**
-   * Search for candidates by name using the simple names endpoint
-   * Returns basic candidate name and ID pairs
+   * Get committees associated with a specific candidate
+   * Returns detailed committee information including designation, type, and contact details
    */
-  async searchCandidateNames(query: string): Promise<FecApiResponse<CandidateNameResult[]>> {
-    const url = new URL(`${this.baseUrl}/v1/names/candidates/`)
-    const params = new URLSearchParams({
-      q: query,
-      api_key: this.apiKey,
-    })
-
-    const response = await this.makeRequest(`${url}?${params}`)
-
-    if (!response.ok) {
-      const errorData = await this.parseErrorResponse(response)
-      throw new FecApiError(
-        'Error fetching response from FEC API',
-        response.status,
-        errorData.message || response.statusText
-      )
-    }
-
-    const data = (await response.json()) as FecApiResponse<CandidateNameResult[]>
-    return {
-      results: data.results,
-      pagination: null,
-    }
-  }
-
-  /**
-   * Search for candidates with detailed information
-   * Returns comprehensive candidate data including committees, office, party, etc.
-   */
-  async searchCandidates(
-    options: CandidateSearchOptions = {}
-  ): Promise<FecApiResponse<CandidateSearchResult>> {
-    const url = new URL(`${this.baseUrl}/v1/candidates/search/`)
+  async getCandidateCommittees(
+    candidateId: string,
+    options: CandidateCommitteesOptions = {}
+  ): Promise<FecApiResponse<CommitteeDetail>> {
+    const url = new URL(`${this.baseUrl}/v1/candidate/${candidateId}/committees/`)
     const params = this.buildSearchParams(options)
 
     const response = await this.makeRequest(`${url}?${params}`)
@@ -62,13 +33,13 @@ export class CandidateSearchService {
     if (!response.ok) {
       const errorData = await this.parseErrorResponse(response)
       throw new FecApiError(
-        'Error fetching response from FEC API',
+        'Error fetching candidate committees from FEC API',
         response.status,
         errorData.message || response.statusText
       )
     }
 
-    const data = (await response.json()) as FecApiResponse<CandidateSearchResult>
+    const data = (await response.json()) as FecApiResponse<CommitteeDetail>
 
     return {
       results: data.results,
@@ -76,17 +47,22 @@ export class CandidateSearchService {
     }
   }
 
-  private buildSearchParams(options: CandidateSearchOptions): URLSearchParams {
+  private buildSearchParams(options: CandidateCommitteesOptions): URLSearchParams {
     const params = new URLSearchParams({ api_key: this.apiKey })
 
     // Only include parameters that are valid for the FEC API
     Object.entries(options).forEach(([key, value]) => {
-      const isValidParam = key in API_PARAMS
+      const isValidParam = key in CandidateCommitteeParams
       // TODO: Log if param is invalid
       const hasValue = value !== undefined && value !== null
 
       if (isValidParam && hasValue) {
-        params.append(key, String(value))
+        if (Array.isArray(value)) {
+          // Handle array parameters
+          value.forEach((item) => params.append(key, String(item)))
+        } else {
+          params.append(key, String(value))
+        }
       }
     })
 
